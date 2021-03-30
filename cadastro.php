@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -19,8 +22,17 @@
 </form>
 
 
-
-
+<!--A SESSION CONTADOR RECEBER TRUE SE O ROW4 EM PROCESSA CADASTRO RETORNAR ALGUM VALOR MAIOR QUE 0 (SIGNIFICA QUE JA EXISTE UM EMAIL IGUAL CADASTRADO NO BANCO, SE ELA RECEBE TRUE ELA ABRE ESSA DIV)-->
+<?php
+if(isset($_SESSION['contador'])):
+?>
+  <div class="notificacao3">
+  <p>Email já Cadastrado</p>
+  </div>
+<?php  
+endif;
+unset($_SESSION['contador']);
+?>
 
   </body>
 </html>

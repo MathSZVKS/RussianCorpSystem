@@ -92,6 +92,21 @@ body{
 
 }
 
+.notificacao3{
+  
+  width: 300px;
+  padding: 10px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #a73434;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+
+}
+
 .notificacaoCadastrado{
 
   width: 300px;

@@ -5,7 +5,7 @@ include('verifica_login.php');
 
 $filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
 
-$sql = "select usuarios.codigo, usuarios.nome, usuarios.email, usuarios.profissao, usuarios.dt_nascimento, equipamento.problema_citado from usuarios, equipamento where usuarios.codigo = equipamento.codigo_usuario and usuarios.nome like '%$filtro%' order by usuarios.nome";
+$sql = "select usuarios.codigo, usuarios.nome, usuarios.email, usuarios.profissao, usuarios.dt_nascimento, equipamento.problema_citado, equipamento.tipo from usuarios, equipamento where usuarios.codigo = equipamento.codigo_usuario and usuarios.nome like '%$filtro%' order by usuarios.nome";
 $consulta = mysqli_query($conexao,$sql);
 $registros = mysqli_num_rows($consulta);
 
@@ -58,6 +58,7 @@ $registros = mysqli_num_rows($consulta);
                     $profissao = $exibirRegistros[3];
                     $dataNascimento = $exibirRegistros[4];
                     $problemaCitado= $exibirRegistros[5];
+                    $tipo= $exibirRegistros[6];
 
                     print "<article>";
 
@@ -67,6 +68,9 @@ $registros = mysqli_num_rows($consulta);
                     print("<strong>Profissão:</strong> $profissao<br>");
                     print("<strong>Nascimento:</strong> $dataNascimento<br>");
                     print("<strong>Problema citado:</strong> $problemaCitado<br>");
+                    print("<strong>Equipamento:</strong> $tipo<br>");
+                    
+
                     
                     print "</article>";
 
